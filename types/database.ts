@@ -1,7 +1,7 @@
 export type UserRole = 'USER' | 'PARTNER' | 'ADMIN';
 export type UserStatus = 'ACTIVE' | 'BLOCKED' | 'INVISIBLE';
 export type PartnerStatus = 'PENDING' | 'APPROVED' | 'SUSPENDED';
-export type ReservationStatus = 'PENDING' | 'PAID' | 'CANCELLED';
+export type ReservationStatus = 'PENDING' | 'PAID' | 'CANCELLED' | 'COMPLETED';
 
 export interface User {
   id: string;
@@ -64,6 +64,14 @@ export interface Chat {
   last_message?: string;
   last_message_at?: Date;
   created_at: Date;
+}
+
+export interface Match {
+  id: string;
+  user1_id: string;
+  user2_id: string;
+  created_at: Date;
+  is_active: boolean;
 }
 
 export interface Message {
